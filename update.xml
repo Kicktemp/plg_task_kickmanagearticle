@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updates>
+	<update>
+		<name>Task - KickManageArticle</name>
+		<description>KickManageArticle Plugin</description>
+		<element>kickmanagearticle</element>
+		<type>plugin</type>
+		<folder>task</folder>
+		<client>site</client>
+		<section>updates</section>
+		<version>1.0.0</version>
+		<changelogurl>https://raw.githubusercontent.com/Kicktemp/plg_task_kickmanagearticle/master/changelog.xml
+		</changelogurl>
+		<infourl title="KickManageArticle Plugin">https://github.com/Kicktemp/plg_task_kickmanagearticle/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip"><![CDATA[https://github.com/Kicktemp/plg_task_kickmanagearticle/releases/download/v1.0.0/plg_task_kickmanagearticle_1.0.0.zip]]></downloadurl>
+		</downloads>
+		<sha256>b63fe5451b620df162d09d5434249a3e111899a6949ed34fe1901707df9931b1</sha256>
+		<sha384>f44324c487ea164a48f521d295a283e7f465fdcf29162ddf14ff57820c8b2130e9af8f11bc2f4ed3b2ef02fe37b9e663</sha384>
+		<sha512>5f1bcf28b06c728bb55f2576c4c2e4070ca688079445fb1454969b70975142f6661850400bbbd682a81d1064698bca2835398896eebfea600d996e1a98be329f</sha512>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>Kicktemp GmbH</maintainer>
+		<maintainerurl>https://kicktemp.com</maintainerurl>
+		<php_minimum>7.2.5</php_minimum>
+		<targetplatform name="joomla" version="4.[01]"/>
+	</update>
+</updates>
