@@ -1,0 +1,10 @@
+<changelogs>
+	<changelog>
+		<element>kickmanagearticle</element>
+		<type>plugin</type>
+		<version>1.0.0</version>
+		<note>
+			<item>First Version</item>
+		</note>
+	</changelog>
+</changelogs>
