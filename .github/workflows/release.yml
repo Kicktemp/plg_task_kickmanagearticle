@@ -1,0 +1,52 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build_release:
+    name: build_release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run release
+
+      - name: Extract version
+        id: extract_version
+        uses: Saionaro/extract-package-version@v1.0.6
+
+      - name: Changelog
+        uses: scottbrenner/generate-changelog-action@master
+        id: Changelog
+
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: v${{ steps.extract_version.outputs.version }}
+          tag_name: ${{ github.ref }}
+          body: |
+            ${{ steps.Changelog.outputs.changelog }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: upload joomla artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./archives/plg_task_kickmanagearticle_${{ steps.extract_version.outputs.version }}.zip
+          asset_name: plg_task_kickmanagearticle_${{ steps.extract_version.outputs.version }}.zip
+          asset_content_type: application/zip

@@ -1,0 +1,14 @@
+### WebStorm/IntelliJ ###
+/.idea
+
+# Dependency directories
+/node_modules
+
+# Build generated
+/dist
+/archives
+/sourcefiles
+/releasefiles
+/package
+/oldupdate.xml
+/demo_changelog.xml

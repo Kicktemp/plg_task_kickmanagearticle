@@ -1,0 +1,85 @@
+{
+  "name": "KickManageArticle",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "boilerplate": "cross-env NODE_ENV=development gulp boilerplate",
+    "build": "cross-env NODE_ENV=production gulp build",
+    "watch": "cross-env NODE_ENV=development gulp watch",
+    "cleaner": "cross-env NODE_ENV=production gulp cleaner",
+    "package": "cross-env NODE_ENV=production gulp copyPackageFiles",
+    "copy": "cross-env NODE_ENV=production gulp copyFiles",
+    "copyrelease": "cross-env NODE_ENV=production gulp copyRelease",
+    "archiver": "cross-env NODE_ENV=production gulp archiver",
+    "release": "cross-env NODE_ENV=production gulp release",
+    "download:joomla": "sh ./scripts/joomla.sh",
+    "download:joomla4": "sh ./scripts/joomla4.sh",
+    "updateXML": "cross-env NODE_ENV=production gulp updateXML && sh ./scripts/buildsha.sh",
+    "build:sha": "sh ./scripts/buildsha.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kicktemp/plg_task_kickmanagearticle.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Kicktemp GmbH",
+    "email": "hello@kicktemp.com",
+    "url": "https://kicktemp.com"
+  },
+  "contributors": [
+    {
+      "name": "Niels Nübel",
+      "email": "niels@kicktemp.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kicktemp/plg_task_kickmanagearticle/issues"
+  },
+  "homepage": "https://github.com/Kicktemp/plg_task_kickmanagearticle#readme",
+  "buildconfigs": {
+    "proxy": "http://plg_task_kickmanagearticle.kick"
+  },
+  "placeholder": {
+    "[UPDATEURL]": "https://kicktemp.shop/download?e=[PACKAGE_NAME]&v=[VERSION]",
+    "[PACKAGE_NAME]": "plg_task_kickmanagearticle",
+    "[PROJECT_NAME]": "Kick Manage Article",
+    "[PRODUCT_NAME]": "KickManageArticle",
+    "[AUTHOR]": "Kicktemp GmbH",
+    "[AUTHOR_EMAIL]": "hello@kicktemp.com",
+    "[COPYRIGHT]": "Copyright © 2022 Kicktemp GmbH. All rights reserved.",
+    "[LICENSE]": "GNU General Public License version 2 or later; see LICENSE.txt",
+    "[AUTHOR_URL]": "https://kicktemp.com",
+    "[DATE]": "18.07.2022",
+    "[PLUGINTYPE]": "task"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/register": "^7.15.3",
+    "archiver": "^5.3.0",
+    "browser-sync": "^2.27.5",
+    "core-js": "^3.16.2",
+    "cross-env": "^7.0.3",
+    "fs": "^0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.3",
+    "gulp-clean": "^0.4.0",
+    "gulp-if": "^3.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace-task": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "gulp-xml-transformer": "^5.1.1",
+    "merge-stream": "^2.0.0",
+    "node-notifier": "^10.0.0",
+    "through2": "^4.0.2"
+  }
+}
