@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="task" method="upgrade">
+	<name>PLG_TASK_KICKMANAGEARTICLE</name>
+	<creationDate>[DATE]</creationDate>
+	<author>[AUTHOR]</author>
+	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
+	<authorUrl>[AUTHOR_URL]</authorUrl>
+	<copyright>[COPYRIGHT]</copyright>
+	<license>[LICENSE]</license>
+	<version>[VERSION]</version>
+	<changelogurl>https://raw.githubusercontent.com/Kicktemp/plg_task_kickmanagearticle/main/changelog.xml</changelogurl>
+	<description>PLG_TASK_KICKMANAGEARTICLE_XML_DESCRIPTION</description>
+	<namespace path="src">Kicktemp\Plugin\Task\ManageArticle</namespace>
+	<scriptfile>script.php</scriptfile>
+	<files>
+		<filename plugin="kickmanagearticle">kickmanagearticle.php</filename>
+		<folder>forms</folder>
+		<folder>language</folder>
+	</files>
+	<config>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="[PROJECT_NAME]">
+			https://raw.githubusercontent.com/Kicktemp/plg_task_kickmanagearticle/main/update.xml
+		</server>
+	</updateservers>
+</extension>

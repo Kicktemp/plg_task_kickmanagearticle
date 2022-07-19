@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<fields name="params">
+		<fieldset name="task_params">
+			<field
+				name="moveDate"
+				type="list"
+				label="PLG_TASK_KICKMANAGEARTICLE_MOVE_DATE_LABEL"
+				validate="options"
+				default="created"
+			>
+				<option value="created">JGLOBAL_CREATED</option>
+				<option value="modified">JGLOBAL_MODIFIED</option>
+				<option value="published">JPUBLISHED</option>
+				<option value="unpublished">JUNPUBLISHED</option>
+			</field>
+			<field
+				name="years"
+				type="number"
+				label="PLG_TASK_KICKMANAGEARTICLE_YEARS_LABEL"
+				required="true"
+				min="0"
+				step="1"
+				default="0"
+				filter="int"
+			/>
+			<field
+				name="months"
+				type="number"
+				label="PLG_TASK_KICKMANAGEARTICLE_MONTHS_LABEL"
+				required="true"
+				min="0"
+				max="12"
+				step="1"
+				default="0"
+				filter="int"
+			/>
+			<field
+				name="days"
+				type="number"
+				label="PLG_TASK_KICKMANAGEARTICLE_DAYS_LABEL"
+				required="true"
+				min="0"
+				max="31"
+				step="1"
+				default="1"
+				filter="int"
+			/>
+			<field
+				name="hours"
+				type="number"
+				label="PLG_TASK_KICKMANAGEARTICLE_HOURS_LABEL"
+				required="true"
+				min="0"
+				max="24"
+				step="1"
+				default="0"
+				filter="int"
+			/>
+			<field
+				name="minutes"
+				type="number"
+				label="PLG_TASK_KICKMANAGEARTICLE_MINUTES_LABEL"
+				required="true"
+				min="0"
+				max="60"
+				step="1"
+				default="0"
+				filter="int"
+			/>
+			<field
+				name="fromCatid"
+				type="categoryedit"
+				extension="com_content"
+				label="PLG_TASK_KICKMANAGEARTICLE_FROM_CATEGORY_LABEL"
+				addfieldprefix="Joomla\Component\Categories\Administrator\Field"
+				required="true"
+				default=""
+			/>
+			<field
+				name="toCatid"
+				type="categoryedit"
+				extension="com_content"
+				label="PLG_TASK_KICKMANAGEARTICLE_TO_CATEGORY_LABEL"
+				addfieldprefix="Joomla\Component\Categories\Administrator\Field"
+				required="true"
+				default=""
+			/>
+		</fieldset>
+	</fields>
+</form>
