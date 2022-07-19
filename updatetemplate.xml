@@ -21,6 +21,5 @@
   <maintainer>Kicktemp GmbH</maintainer>
   <maintainerurl>https://kicktemp.com</maintainerurl>
   <php_minimum>7.2.5</php_minimum>
-  <supported_databases mysql="5.6" mariadb="10.1" />
   <targetplatform name="joomla" version="4.[01]"/>
 </update>
