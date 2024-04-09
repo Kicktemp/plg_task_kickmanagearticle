@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-INSTALLDIR=$SCRIPTPATH/../dist/
+INSTALLDIR=$SCRIPTPATH/../dist4/
 
 if [ ! -d INSTALLDIR ]; then
  mkdir -p ${INSTALLDIR}
