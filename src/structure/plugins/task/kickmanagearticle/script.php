@@ -3,7 +3,7 @@
  * @package    [PACKAGE_NAME]
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
- * @copyright  [AUTHOR_URL]
+ * @copyright  [COPYRIGHT]
  * @license    [LICENSE]
  * @link       [AUTHOR_URL]
  */
@@ -11,6 +11,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\Installer\InstallerScript;
 
 /**
  * KickManageArticle script file.
@@ -18,21 +19,53 @@ use Joomla\CMS\Factory;
  * @package   plg_task_kickmanagearticle
  * @since     1.0.0
  */
-class plgTaskKickManageArticleInstallerScript
+class plgTaskKickManageArticleInstallerScript extends InstallerScript
 {
-	public function __construct()
-	{
-		// Define the minimum versions to be supported.
-		$this->minimumJoomla = '4.0';
-		$this->minimumPhp    = '7.2.5';
+	/**
+	 * Minimum PHP version required to install the extension
+	 *
+	 * @var    string
+	 * @since  3.6
+	 */
+	protected $minimumPhp = '7.2.5';
 
-		$this->dir = __DIR__;
+	/**
+	 * Minimum Joomla! version required to install the extension
+	 *
+	 * @var    string
+	 * @since  3.6
+	 */
+	protected $minimumJoomla = '4.0';
+
+	/**
+	 * @param $type
+	 * @param $parent
+	 * @return true|void
+	 */
+	public function preflight($type, $parent)
+	{
+		if (!in_array($type, ['install', 'update'])) {
+			return true;
+		}
 	}
 
 	/**
-	 * Called on installation
-	 *
-	 * @return  boolean  True on success
+	 * @param $install_type
+	 * @param $parent
+	 * @return true|void
+	 */
+	public function postflight($install_type, $parent)
+	{
+		if (!in_array($install_type, ['install', 'update']))
+		{
+			return true;
+		}
+
+		$this->removeFiles();
+	}
+
+	/**
+	 * @return void
 	 */
 	public function install() {
 		Factory::getDBO()->setQuery("UPDATE #__extensions SET enabled = 1 WHERE type = 'plugin' AND folder = 'task' AND element = 'kickmanagearticle'")->execute();
