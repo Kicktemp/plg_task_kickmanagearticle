@@ -1,21 +1,23 @@
 {
   "name": "KickManageArticle",
+  "version": "1.1.0",
   "description": "",
-  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "boilerplate": "cross-env NODE_ENV=development gulp boilerplate",
-    "build": "cross-env NODE_ENV=production gulp build",
-    "watch": "cross-env NODE_ENV=development gulp watch",
-    "cleaner": "cross-env NODE_ENV=production gulp cleaner",
-    "package": "cross-env NODE_ENV=production gulp copyPackageFiles",
-    "copy": "cross-env NODE_ENV=production gulp copyFiles",
-    "copyrelease": "cross-env NODE_ENV=production gulp copyRelease",
-    "archiver": "cross-env NODE_ENV=production gulp archiver",
-    "release": "cross-env NODE_ENV=production gulp release",
+    "boilerplate": "cross-env KICK_CONFIG=boilerplate node ./scripts/tasks/copy.js",
+    "copy": "cross-env KICK_CONFIG=copy node ./scripts/tasks/copy.js",
+    "copyrelease": "cross-env KICK_CONFIG=release node ./scripts/tasks/copy.js",
+    "copypackage": "cross-env KICK_CONFIG=package node ./scripts/tasks/copy.js",
+    "watch": "node ./scripts/tasks/watch.js",
+    "cleaner": "node ./scripts/tasks/clean.js",
+    "archives": "cross-env node ./scripts/tasks/archives.js",
+    "buildintern": "npm run cleaner && npm run copyrelease && npm run copypackage && npm run archives",
+    "release": "npm run cleaner && npm run copyrelease && npm run copypackage && npm run archives && npm run updateXML",
+    "updateXML": "node ./scripts/tasks/xml.js",
     "download:joomla": "sh ./scripts/joomla.sh",
     "download:joomla4": "sh ./scripts/joomla4.sh",
-    "updateXML": "cross-env NODE_ENV=production gulp updateXML && sh ./scripts/buildsha.sh",
-    "build:sha": "sh ./scripts/buildsha.sh"
+    "download:joomla5": "sh ./scripts/joomla5.sh",
+    "publishtag": "sh ./scripts/post.sh"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,10 @@
     {
       "name": "Niels Nübel",
       "email": "niels@kicktemp.com"
+    },
+    {
+      "name": "Stefan Wendhausen",
+      "email": "stefan@kicktemp.com"
     }
   ],
   "license": "MIT",
@@ -39,47 +45,28 @@
   },
   "homepage": "https://github.com/Kicktemp/plg_task_kickmanagearticle#readme",
   "buildconfigs": {
-    "proxy": "http://plg_task_kickmanagearticle.kick"
+    "proxy": "http://plg_task_kickmanagearticle.kick4"
   },
   "placeholder": {
     "[UPDATEURL]": "https://kicktemp.shop/download?e=[PACKAGE_NAME]&v=[VERSION]",
-    "[PACKAGE_NAME]": "plg_task_kickmanagearticle",
     "[PROJECT_NAME]": "Kick Manage Article",
-    "[PRODUCT_NAME]": "KickManageArticle",
+    "[PACKAGE_NAME]": "plg_task_kickmanagearticle",
+    "[ALIAS]": "kickmanagearticle",
+    "[ELEMENT]": "kickmanagearticle",
     "[AUTHOR]": "Kicktemp GmbH",
     "[AUTHOR_EMAIL]": "hello@kicktemp.com",
-    "[COPYRIGHT]": "Copyright © 2022 Kicktemp GmbH. All rights reserved.",
+    "[COPYRIGHT]": "Copyright © 2024 Kicktemp GmbH. All rights reserved.",
     "[LICENSE]": "GNU General Public License version 2 or later; see LICENSE.txt",
     "[AUTHOR_URL]": "https://kicktemp.com",
-    "[DATE]": "18.07.2022",
+    "[DATE]": "09/04/2024",
     "[PLUGINTYPE]": "task"
   },
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/preset-env": "^7.15.0",
-    "@babel/register": "^7.15.3",
-    "archiver": "^5.3.0",
-    "browser-sync": "^2.27.5",
-    "core-js": "^3.16.2",
+    "archiver": "^5.3.1",
+    "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
-    "fs": "^0.0.1-security",
-    "gulp": "^4.0.2",
-    "gulp-changed": "^4.0.3",
-    "gulp-clean": "^0.4.0",
-    "gulp-if": "^3.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-replace-task": "^2.0.1",
-    "gulp-util": "^3.0.8",
-    "gulp-xml-transformer": "^5.1.1",
-    "merge-stream": "^2.0.0",
-    "node-notifier": "^10.0.0",
-    "through2": "^4.0.2"
+    "fs-extra": "^11.1.0",
+    "glob": "^8.1.0",
+    "libxmljs": "1.0.9"
   }
 }

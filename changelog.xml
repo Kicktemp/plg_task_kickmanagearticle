@@ -2,6 +2,18 @@
 	<changelog>
 		<element>kickmanagearticle</element>
 		<type>plugin</type>
+		<version>1.1.0</version>
+		<addition>
+			<item>add Joomla 5 Support</item>
+			<item>add german language files</item>
+		</addition>
+		<note>
+			<item>Improve build process</item>
+		</note>
+	</changelog>
+	<changelog>
+		<element>kickmanagearticle</element>
+		<type>plugin</type>
 		<version>1.0.0</version>
 		<note>
 			<item>First Version</item>
