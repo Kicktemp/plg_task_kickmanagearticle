@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<updates>
+<updates><update>
+  <name>Task - KickManageArticle</name>
+  <description>KickManageArticle Plugin</description>
+  <element>kickmanagearticle</element>
+  <type>plugin</type>
+  <folder>task</folder>
+  <client>site</client>
+  <section>updates</section>
+  <version>1.1.0</version>
+  <changelogurl>https://kicktemp.shop/changelog/kickmanagearticle</changelogurl>
+  <infourl title="KickManageArticle Plugin">https://kicktemp.shop/produkte/kickmanagearticle</infourl>
+  <downloads>
+    <downloadurl type="full" format="zip"><![CDATA[https://kicktemp.shop/download/kickmanagearticle/v1.1.0]]></downloadurl>
+  </downloads>
+  <sha256>05dbc397f4bc7bb68801feec7f5238f8d05c13b1ef74401d9b6276d99a8a5be6</sha256>
+  <sha384>46ce7262d565efd7cda699d02c910ee90a3fabe0001f075206ea5aff5d52feb7dc91fd0911bca167d2944a395594e99b</sha384>
+  <sha512>6eb8d5fd62e9a0d46ea800ed18b6551e1ea1e70ab46bf014a76e9d80050b0512e0fbd7a9d8d6b119d2cede074d5caa39d1e8839ec4f04af0978e4a70285828ad</sha512>
+  <tags>
+    <tag>stable</tag>
+  </tags>
+  <maintainer>Kicktemp GmbH</maintainer>
+  <maintainerurl>https://kicktemp.com</maintainerurl>
+  <php_minimum>7.2.5</php_minimum>
+  <targetplatform name="joomla" version="4\.(0|1|2|3|4)|5\.(0|1|2|3|4)"/>
+</update>
 	<update>
 		<name>Task - KickManageArticle</name>
 		<description>KickManageArticle Plugin</description>
